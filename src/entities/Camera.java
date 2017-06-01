@@ -26,10 +26,10 @@ public class Camera {
 			position.x -= 0.2f;
 		}
 		if (Keyboard.isKeyDown(Keyboard.KEY_U)) {
-			position.y -= 0.2f;
+			position.y += 0.2f;
 		}
 		if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
-			position.y += 0.2f;
+			position.y -= 0.2f;
 		}
 	
 	}
