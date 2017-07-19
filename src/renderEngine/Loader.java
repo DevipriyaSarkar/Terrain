@@ -1,10 +1,9 @@
 package renderEngine;
 
-import java.util.List;
-import java.io.FileInputStream;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
@@ -35,7 +34,7 @@ public class Loader {
 	public int loadTexture(String fileName) {
 		Texture texture = null;
 		try {
-			texture = TextureLoader.getTexture("PNG", new FileInputStream("res/textures/" + fileName + ".png"));
+			texture = TextureLoader.getTexture("PNG", Class.class.getResourceAsStream("/res/textures/" + fileName + ".png"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
