@@ -48,12 +48,12 @@ public class MainGameLoop {
 			for(Entity entity:entities){
                 renderer.processEntity(entity);
             }
-			renderer.render(light, camera);
+			renderer.render(light, camera);	// render model
 			DisplayManager.updateDisplay();
 		}
 
 		renderer.cleanUp();
-		loader.cleanUp();
+		loader.cleanUp();	// delete all VBOs and VAOs
 		DisplayManager.closeDisplay();
 	}
 

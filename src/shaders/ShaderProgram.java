@@ -47,6 +47,7 @@ public abstract class ShaderProgram {
 		GL20.glUseProgram(0);
 	}
 	
+	// memory management
 	public void cleanUp() {
 		stop();
 		GL20.glDetachShader(programID, vertexShaderID);
@@ -56,32 +57,40 @@ public abstract class ShaderProgram {
 		GL20.glDeleteProgram(programID);
 	}
 	
+	// link the inputs to the shader with the VAO
 	protected abstract void bindAttributes();
 	
+	// variableName - variable in the shader code
 	protected void bindAttribute(int attribute, String variableName) {
 		GL20.glBindAttribLocation(programID, attribute, variableName);
 	}
 	
+	// load float value in a uniform variable
 	protected void loadFloat(int location, float value) {
 		GL20.glUniform1f(location, value);
 	}
 
+	// load int value in a uniform variable
 	protected void loadInt(int location, int value) {
 		GL20.glUniform1i(location, value);
 	}
 
+	// load 3D vector in a uniform variable
 	protected void loadVector(int location, Vector3f vector) {
 		GL20.glUniform3f(location, vector.x, vector.y, vector.z);
 	}
 
+	// load 4D vector in a uniform variable
 	protected void loadVector(int location, Vector4f vector) {
 		GL20.glUniform4f(location, vector.x, vector.y, vector.z, vector.w);
 	}
 
+	// load 2D vector in a uniform variable
 	protected void load2DVector(int location, Vector2f vector) {
 		GL20.glUniform2f(location, vector.x, vector.y);
 	}
 
+	// load boolean value in a uniform variable
 	protected void loadBoolean(int location, boolean value) {
 		float toLoad = 0;
 		if (value) {
@@ -90,6 +99,7 @@ public abstract class ShaderProgram {
 		GL20.glUniform1f(location, toLoad);
 	}
 
+	// load matrix in a uniform variable
 	protected void loadMatrix(int location, Matrix4f matrix) {
 		matrix.store(matrixBuffer);
 		matrixBuffer.flip();

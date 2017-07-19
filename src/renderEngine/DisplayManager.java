@@ -16,6 +16,7 @@ public class DisplayManager {
 	private static final String TITLE = "Simple Terrain";
 
 	public static void createDisplay() {
+		// OpenGL version used
 		ContextAttribs attribs = new ContextAttribs(3, 2)
 				.withForwardCompatible(true)
 				.withProfileCore(true);

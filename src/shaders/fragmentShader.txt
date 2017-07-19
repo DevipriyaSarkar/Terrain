@@ -1,4 +1,4 @@
-#version 400 core
+#version 400 core	// GLSL version
 
 in vec2 passTextureCoords;
 in vec3 surfaceNormal;
@@ -11,6 +11,8 @@ uniform float shineDamper;
 uniform float reflectivity;
 uniform sampler2D textureSampler;
 uniform vec3 lightColour;
+
+// executed for every pixel
 
 void main() {
 

@@ -20,6 +20,7 @@ import entities.Light;
 
 public class MasterRenderer {
 
+	// parameters for the projection view
 	private static final float FOV = 70;
 	private static final float NEAR_PLANE = 0.1f;
 	private static final float FAR_PLANE = 1000;
@@ -80,6 +81,7 @@ public class MasterRenderer {
 		terrainShader.cleanUp();
 	}
 
+	// called once every frame for OpenGL to prepare
 	public void prepare() {
 		GL11.glEnable(GL11.GL_DEPTH_TEST);
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);

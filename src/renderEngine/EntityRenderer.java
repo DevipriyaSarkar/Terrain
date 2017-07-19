@@ -39,15 +39,16 @@ public class EntityRenderer {
 		}
 	}
 
+	// render the model
 	private void prepareTexturedModel(TexturedModel model) {
 		RawModel rawModel = model.getRawModel();
 		GL30.glBindVertexArray(rawModel.getVaoID());
-		GL20.glEnableVertexAttribArray(0);
-		GL20.glEnableVertexAttribArray(1);
-		GL20.glEnableVertexAttribArray(2);
+		GL20.glEnableVertexAttribArray(0);	// position coordinates
+		GL20.glEnableVertexAttribArray(1);	// texture coordinates
+		GL20.glEnableVertexAttribArray(2);	// projection coordinates 
 		ModelTexture texture = model.getTexture();
 		shader.loadShineVariable(texture.getShineDamper(), texture.getReflectivity());
-		GL13.glActiveTexture(GL13.GL_TEXTURE0);
+		GL13.glActiveTexture(GL13.GL_TEXTURE0);	// activate texture bank - where sampler function will sample
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getTexture().getID());
 	}
 
