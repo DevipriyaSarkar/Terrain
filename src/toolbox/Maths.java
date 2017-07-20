@@ -18,6 +18,7 @@ public class Maths {
 		return matrix;
 	}
 	
+	// move in opposite direction of the camera movement
 	public static Matrix4f createViewMatrix(Camera camera) {
 		Matrix4f viewMatrix = new Matrix4f();
 		viewMatrix.setIdentity();
