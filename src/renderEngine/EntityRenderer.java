@@ -45,7 +45,7 @@ public class EntityRenderer {
 		GL30.glBindVertexArray(rawModel.getVaoID());
 		GL20.glEnableVertexAttribArray(0);	// position coordinates
 		GL20.glEnableVertexAttribArray(1);	// texture coordinates
-		GL20.glEnableVertexAttribArray(2);	// projection coordinates 
+		GL20.glEnableVertexAttribArray(2);	// normal coordinates 
 		ModelTexture texture = model.getTexture();
 		shader.loadShineVariable(texture.getShineDamper(), texture.getReflectivity());
 		GL13.glActiveTexture(GL13.GL_TEXTURE0);	// activate texture bank - where sampler function will sample

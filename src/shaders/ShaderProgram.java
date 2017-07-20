@@ -70,7 +70,7 @@ public abstract class ShaderProgram {
 		GL20.glUniform1f(location, value);
 	}
 
-	// load int value in a uniform variable
+	// load integer value in a uniform variable
 	protected void loadInt(int location, int value) {
 		GL20.glUniform1i(location, value);
 	}
